@@ -27010,8 +27010,7 @@ function updateStatus(order) {
 updateStatus(order); //Socket
 // Socket
 
-var socket = io();
-Object(_admin__WEBPACK_IMPORTED_MODULE_3__["initAdmin"])(socket); // Join
+var socket = io(); // Join
 
 if (order) {
   socket.emit('join', "order_".concat(order._id));

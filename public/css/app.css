@@ -497,6 +497,11 @@ section.status {
   margin-top: 8px;
 }
 
+.error h1 {
+  font-size: 2rem;
+  color: #232323;
+}
+
 @media (max-width: 1060px) {
   .container {
     max-width: 90%;

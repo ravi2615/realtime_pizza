@@ -194,6 +194,13 @@ section.status {
     margin-top: 8px;
 }
 
+//404
+
+.error h1{
+    font-size: 2rem;
+    color: $dark;
+}
+
 @media(max-width:1060px) {
     .container {
         max-width: 90%;
@@ -206,6 +213,7 @@ section.status {
 }
 
 @media(max-width: 768px) {
+    
     .status-box ul li span:before {
         font-size: 34px;
     }
