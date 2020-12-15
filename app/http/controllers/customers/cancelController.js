@@ -11,7 +11,7 @@ function cancelController () {
             // console.log("deletting")
             const orders = await Order.findById(req.params.id)
             // console.log(orders)
-            await Order.findByIdAndUpdate({_id: req.params.id})
+            await Order.findByIdAndDelete({_id: req.params.id})
             // orders.status="canceled"
             const order = new Cancel({
                 customerId: req.user._id,

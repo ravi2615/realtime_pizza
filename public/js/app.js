@@ -27036,6 +27036,10 @@ socket.on('orderUpdated', function (data) {
     progressBar: false
   }).show();
 });
+var dummy = document.getElementById('cancel');
+dummy.addEventListener('click', function (e) {
+  alert("You will get refund SMS on your mobile number(given during order)\n    after deducting internet handle charges of \u20B920 within 15 minutes. For any query call to our toll free number 4440004440.");
+});
 
 /***/ }),
 

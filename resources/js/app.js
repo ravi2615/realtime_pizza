@@ -112,3 +112,10 @@ socket.on('orderUpdated', (data) => {
         progressBar: false,
     }).show();
 })
+
+
+const dummy = document.getElementById('cancel')
+dummy.addEventListener('click',(e)=> {
+    alert(`You will get refund SMS on your mobile number(given during order)
+    after deducting internet handle charges of ₹20 within 15 minutes. For any query call to our toll free number 4440004440.`)
+})
