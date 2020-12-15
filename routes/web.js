@@ -4,6 +4,7 @@ const orderController = require('../app/http/controllers/customers/orderControll
 const homeController = require('../app/http/controllers/homeController')
 const adminOrderController = require('../app/http/controllers/admin/orderController')
 const statusController = require('../app/http/controllers/admin/statusController')
+const cancelController = require('../app/http/controllers/customers/cancelController')
 
 //Middleware
 const guest = require('../app/http/middleware/guest')
@@ -29,6 +30,10 @@ app.post('/update-cart', cartController().update)
 app.post('/orders',auth, orderController().store)
 app.get('/customers/orders',auth, orderController().index)
 app.get('/customers/orders/:id',auth, orderController().show)
+
+//cancel order
+app.get('/customers/cancel',auth,cancelController().index)
+app.post('/customers/cancel/:id',auth,cancelController().cancel)
 
 //Admin routes
 app.get('/admin/orders',admin, adminOrderController().index)

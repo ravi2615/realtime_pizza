@@ -390,6 +390,14 @@ a.link {
   color: #FE5F1E;
 }
 
+.link {
+  color: #fff !important;
+}
+
+.link:hover {
+  background: #b23301;
+}
+
 section.status {
   background: #F8F8F8;
   min-height: calc(100vh - 118px);

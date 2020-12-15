@@ -86,6 +86,13 @@ a.link{
     color: $primary;
 }
 
+.link {
+    color: $pure !important;
+    &:hover {
+        background: $primary-hover;
+    }
+}
+
 section.status {
     background: $secondary;
     min-height: calc(100vh - 118px);

@@ -1,7 +1,15 @@
 
+
 <section class="orders light-section">
     <div class="container mx-auto pt-12">
-        <h1 class="font-bold text-lg mb-4">All orders</h1>
+        <h1 class="font-bold text-lg mb-4">All Canceled orders</h1>
+        
+        <div class="text-center">
+            <h1 class="font-bold mb-2 text-red-500"> *Notes</h1>
+            <p class="text-gray-500 text-lg mb-12"> You will get refund SMS on your mobile number(given during order)<br>
+                after deducting internet handle charges of ₹20 within 15 minutes. For any query call to our toll free number 4440004440. </p>
+                 </div>
+
         <% if(messages.success) { %>
         <div id="success-alert" class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3"
             role="alert">
@@ -19,35 +27,33 @@
                     <th class="px-4 py-2 text-left">Phone</th>
                     <th class="px-4 py-2 text-left">Address</th>
                     <th class="px-4 py-2 text-left">Time</th>
+                    <th class="px-4 py-2 text-left">Payment Status</th>
+                    <th class="px-4 py-2 text-left"></th>
                 </tr>
             </thead>
             <tbody>
                 <% if(orders.length) { %>
                 <% orders.forEach((order) => { %>
                 <tr>
-                    <td class="border px-4 py-2 bg-red-500 link">
-                        <a href="/customers/orders/<%= order._id %>"><%= order._id %></a>
+                    <td class="border px-4 py-2 bg-red-100 line-through">
+                        <%= order._id %>
                     </td>
-                    <td class="border px-4 py-2">
+                    <td class="border px-4 py-2 line-through">
                         <%= order.phone %>
                     </td>
-                    <td class="border px-4 py-2">
+                    <td class="border px-4 py-2 line-through">
                         <%= order.address %>
                     </td>
-                    <td class="border px-4 py-2">
+                    <td class="border px-4 py-2 line-through">
                         <%= moment(order.createdAt).format('hh:mm A') %>
                     </td>
-                    <td class="border px-4 py-2 bg-red-500 link">
-                        <a href="/customers/orders/<%= order._id %>">Track</a>
-                    </td>
-                    <% if(order.status === 'order_placed') { %>
-                        <td class="border px-4 py-2 text-white link bg-red-500">
-                            <!-- <a class="link cancel" href="/customers/orders/cancel/<%= order._id %>" >Cancel</a> -->
-                            <form id="cancel" action="/customers/cancel/<%= order._id %>" method="POST">
-                                <a onclick="document.getElementById('cancel').submit()" href="#">Cancel</a>
-                            </form>
+                        <td class="border px-4 py-2">
+                            <%= order.paymentStatus ? 'Refunded' : 'Not paid' %>
                         </td>
-                        <% } else %>
+                        <td class="border px-4 py-2 bg-red-700 text-white">
+                            <!-- Canceled -->
+                            <%= order.status %>
+                        </td>
                 </tr>
                 <% }) %>
                 <% } else { %>
@@ -60,9 +66,5 @@
     </div>
 </section>
 
-<section>
-    <div class="container py-10 mx-auto text-center justify-center">
-        <a class="px-6 py-2 rounded-full font-bold mt-4 btn-primary" href="/customers/cancel">See older/canceled order </a>
-    </div>
-</section>
+    
 
