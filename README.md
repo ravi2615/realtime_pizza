@@ -1,3 +1,6 @@
+![pizza](https://user-images.githubusercontent.com/67025166/120517787-a9193400-c385-11eb-8b43-3554c6dee08e.PNG)
+
+
 [+] Create directory structure
 
 [+] Create a NPM project and install all dependancies
